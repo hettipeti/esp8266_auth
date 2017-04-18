@@ -177,7 +177,7 @@ tmr.alarm(3, 100, 1, function()
             if (crc == addr:byte(8)) then
                 print("CRC OK")
                 if learnMode then
-					addtoDatabase(newName, id)
+										addtoDatabase(newName, id)
                     learnMode = false
                     netState = 0
                     learnModeSocket:send("Registered new device\nHave a nice day!\n> ")
@@ -227,7 +227,6 @@ local stateMachine = {
         end
     end,
     
-    
     [2] = function(c, line)
         newName = line
         learnMode = true
@@ -251,8 +250,7 @@ local stateMachine = {
             print("delindex was :"..delindex)
             c:send("Index out of bound exception, try again!\n")
             list(c)    
-        end 
-        
+        end
     end,
 }
 
